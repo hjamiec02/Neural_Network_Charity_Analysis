@@ -4,7 +4,7 @@
 
 A business team at Alphabet Soup provided a CSV containing more than 34,000 organizations that have received funding from Alphabet Soup over the years. Within this dataset are a number of columns that capture metadata about each organization. Using features provided in the dataset from past donors I helped create a binary classifier that is capable of predicting whether applicants will be successful if funded by Alphabet Soup.
 
-## Results: Using bulleted lists and images to support your answers, address the following questions.
+## Results: 
 
 - The data was preprocessed with the following steps:
   - The EIN and NAME columns have been dropped .
@@ -33,12 +33,12 @@ A business team at Alphabet Soup provided a CSV containing more than 34,000 orga
 
 ### Compiling, Training, and Evaluating the Models
 
-My inital model consisted of two layers, the first had 80 neurons, the second had 50, both with relu activations functions. The output layer was assigned a sigmoid activations funcation, as the out put would be grouped as either "IS_SUCCESSFUL" or not.  
+My initial model consisted of two layers, the first had 80 neurons, the second had 50, both with relu activations functions. The output layer was assigned a sigmoid activations function, as the output would be grouped as either "IS_SUCCESSFUL" or not.  
 The initial model output is pictured below:
 
 <img width="631" alt="Screen Shot 2022-09-24 at 12 09 19 PM" src="https://user-images.githubusercontent.com/105119531/192108010-5bf62deb-0bbf-4101-a4c6-c13cb8fe973f.png">
 
-I attempted three more models tyring to reach an accuracy of greater then 75%.  
+I attempted three more models trying to reach an accuracy of greater than 75%.  
 - In the first additional attempt I also dropped “low information” columns “STATUS”, “SPECIAL_CONSIDERATIONS”,
  binned low occurrence value counts “APPLICATION_TYPE”, “CLASSIFICATION” and added a hidden layer, producing the results pictured below:
 
@@ -54,7 +54,7 @@ I attempted three more models tyring to reach an accuracy of greater then 75%.
 
 
 ## Summary: 
-I was able to achieve a result above 75% with the adjustments made in the third model. Because neural networks are very complex, it would take a great deal more investigation to determine how to improve the model from here.  The results are sufficient for this assignment but could still be improved.
+I was able to achieve a result greater than 75% with the adjustments made in the third model. Because neural networks are very complex, it would take a great deal more investigation to determine how to improve the model from here.  The results are sufficient for this assignment but could still be improved.
 
 
  
