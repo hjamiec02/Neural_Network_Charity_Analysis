@@ -16,61 +16,45 @@ A business team at Alphabet Soup provided a CSV containing more than 34,000 orga
 
 - The target variable for the model is IS_SUCCESSFUL
 
-- The variables are considered to be the features for the model are:
-  - STATUS                        
-  - ASK_AMT                                       
-  - APPLICATION_TYPE_Other      
-  - APPLICATION_TYPE_T10          
-  - APPLICATION_TYPE_T19        
-  - APPLICATION_TYPE_T3          
-  - APPLICATION_TYPE_T4           
-  - APPLICATION_TYPE_T5          
-  - APPLICATION_TYPE_T6         
-  - APPLICATION_TYPE_T7          
-  - APPLICATION_TYPE_T8          
-  - AFFILIATION_CompanySponsored  
-  - AFFILIATION_Family/Parent     
-  - AFFILIATION_Independent      
-  - AFFILIATION_National         
-  - AFFILIATION_Other            
-  - AFFILIATION_Regional        
-  - CLASSIFICATION_C1000         
-  - CLASSIFICATION_C1200          
-  - CLASSIFICATION_C2000         
-  - CLASSIFICATION_C2100          
-  - CLASSIFICATION_C3000          
-  - CLASSIFICATION_Other          
-  - USE_CASE_CommunityServ        
-  - USE_CASE_Heathcare            
-  - USE_CASE_Other                
-  - USE_CASE_Preservation         
-  - USE_CASE_ProductDev           
-  - ORGANIZATION_Association      
-  - ORGANIZATION_Co-operative     
-  - ORGANIZATION_Corporation      
-  - ORGANIZATION_Trust            
-  - INCOME_AMT_0                  
-  - INCOME_AMT_1-9999             
-  - INCOME_AMT_10000-24999        
-  - INCOME_AMT_100000-499999      
-  - INCOME_AMT_10M-50M            
-  - INCOME_AMT_1M-5M              
-  - INCOME_AMT_25000-99999        
-  - INCOME_AMT_50M+               
-  - INCOME_AMT_5M-10M            
-  - SPECIAL_CONSIDERATIONS_N     
-  - SPECIAL_CONSIDERATIONS_Y      
+- The variables that are considered to be the features for the model are:
+    
+    - APPLICATION_TYPE—Alphabet Soup application type
+    - AFFILIATION—Affiliated sector of industry
+    - CLASSIFICATION—Government organization classification
+    - USE_CASE—Use case for funding
+    - ORGANIZATION—Organization type
+    - STATUS—Active status
+    - INCOME_AMT—Income classification
+    - SPECIAL_CONSIDERATIONS—Special consideration for application
+    - ASK_AMT—Funding amount requested
 
-- The The EIN and NAME columns have been dropped initally, as they are not features for the model.
+
+- The The EIN and NAME columns have been dropped initally, as they are not features for the first model.
 
 ### Compiling, Training, and Evaluating the Models
 
-How many neurons, layers, and activation functions did you select for your neural network model, and why?
+My inital model consisted of two layers, the first had 80 neurons, the second had 50, both with relu activations functions. The output layer was assigned a sigmoid activations funcation, as the out put would be grouped as either "IS_SUCCESSFUL" or not.  
+The initial model output is pictured below:
+
+<img width="631" alt="Screen Shot 2022-09-24 at 12 09 19 PM" src="https://user-images.githubusercontent.com/105119531/192108010-5bf62deb-0bbf-4101-a4c6-c13cb8fe973f.png">
+
+I attempted three more models tyring to reach an accuracy of greater then 75%.  
+- In the first additional attempt I also dropped “low information” columns “STATUS”, “SPECIAL_CONSIDERATIONS”,
+ binned low occurrence value counts “APPLICATION_TYPE”, “CLASSIFICATION” and added a hidden layer, producing the results pictured below:
+
+<img width="878" alt="D3 1 " src="https://user-images.githubusercontent.com/105119531/192108253-d35e16a7-54e6-4f4f-8838-631fb9221d3a.png">
+
+- In my second attempt I Dropped “low information” columns “STATUS”, “SPECIAL_CONSIDERATIONS”, binned low occurrence value counts “APPLICATION_TYPE”, “CLASSIFICATION”, bucketed “NAME” into three categories “, and added a hidden layer and changed activation functions to sigmoid, producing the results pictured below:
+
+<img width="995" alt="D3 2" src="https://user-images.githubusercontent.com/105119531/192108350-52484d3b-d726-4a45-9f67-2915abef70f2.png">
+
+- In my third and final attempt, I dropped “low information” columns “STATUS”, “SPECIAL_CONSIDERATIONS”, binned low occurrence value counts “APPLICATION_TYPE”, “CLASSIFICATION”, binned “NAME” into an other category for all values less than or equal to five. I did not change the model from the initial settings. The results are pictured below:
+
+<img width="830" alt="D3 3" src="https://user-images.githubusercontent.com/105119531/192108460-1eb507a3-a623-4349-9332-eb42a0897bc8.png">
 
 
+## Summary: 
+I was able to achieve a result above 75% with the adjustments made in the third model. Because neural networks are very complex, it would take a great deal more investigation to determine how to improve the model from here.  The results are sufficient for this assignment but could still be improved.
 
-Were you able to achieve the target model performance?
 
-What steps did you take to try and increase model performance?
-
-## Summary: Summarize the overall results of the deep learning model. Include a recommendation for how a different model could solve this classification problem, and explain your recommendation.
+ 
